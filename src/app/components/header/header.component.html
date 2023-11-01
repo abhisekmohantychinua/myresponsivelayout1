@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-button>
+            <mat-icon>home</mat-icon>DeveloperAbhi
+        </button>
+        <div *ngIf="!deviceXs">
+            <button mat-button>Home</button>
+            <button mat-button>Contact Us</button>
+            <button mat-button>About Us</button>
+        </div>
+        <div class="example-spacer"></div>
+        <div>
+            <button mat-icon-button *ngIf="deviceXs" (click)="onClick()">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <button mat-button *ngIf="!deviceXs" (click)="onClick()">
+                <span>Menu</span>
+            </button>
+        </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row *ngIf="deviceXs">
+        <div>
+            <button mat-button>Home</button>
+            <button mat-button>Contact Us</button>
+            <button mat-button>About Us</button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
